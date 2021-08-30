@@ -1,0 +1,3 @@
+/home/kevincorrales/Desktop/SO 2021-2/Unidad 1/evaluacionUnidad1-2021-20/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kevincorrales/Desktop/SO 2021-2/Unidad 1/evaluacionUnidad1-2021-20/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kevincorrales/Desktop/SO 2021-2/Unidad 1/evaluacionUnidad1-2021-20/cmake-build-debug/CMakeFiles/evaluacionUnidad1_2021_20.dir

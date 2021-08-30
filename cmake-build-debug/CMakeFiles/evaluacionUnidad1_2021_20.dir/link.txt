@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/evaluacionUnidad1_2021_20.dir/main.c.o -o evaluacionUnidad1_2021_20 

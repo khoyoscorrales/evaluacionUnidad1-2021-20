@@ -1,0 +1,6 @@
+C language
+C++ language
+2 3 5 7
+2 3 5 7 avg
+Kevin 12345
+3
