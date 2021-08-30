@@ -127,3 +127,47 @@ int contarEspacios(char *cadenaArreglo) {
 
     return contadorEspacios;
 }
+
+void feature5(FILE *fout, int *parr, int length, char *op) {
+    if (strcmp(op, "avg") == 0) {
+        fprintf(fout, "%.0f\n", calcularPromedio(parr, length));
+    } else if (strcmp(op, "max") == 0) {
+        fprintf(fout, "%d\n", encontrarMinimo(parr, length));
+    } else if (strcmp(op, "min") == 0) {
+        fprintf(fout, "%d\n", encontrarMaximo(parr, length));
+    }
+}
+
+double calcularPromedio(int *enteros, int length) {
+    double suma = 0;
+
+    for (int i = 0; i < length; ++i) {
+        suma += enteros[i];
+    }
+
+    return suma != 0 ? suma / length : 0;
+}
+
+int encontrarMinimo(int *enteros, int length) {
+    int minimo = enteros[0];
+
+    for (int i = 1; i < length; ++i) {
+        if (minimo > enteros[i]) {
+            minimo = enteros[i];
+        }
+    }
+
+    return minimo;
+}
+
+int encontrarMaximo(int *enteros, int length) {
+    int maximo = enteros[0];
+
+    for (int i = 1; i < length; ++i) {
+        if (maximo < enteros[i]) {
+            maximo = enteros[i];
+        }
+    }
+
+    return maximo;
+}
