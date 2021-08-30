@@ -171,3 +171,20 @@ int encontrarMaximo(int *enteros, int length) {
 
     return maximo;
 }
+
+void feature6(FILE *fin, struct Obj_t *pobj) {
+    char line[256];
+
+    if (fgets(line, sizeof(line), fin) != NULL) {
+        char *partes;
+        partes = strtok(line, " ");
+
+        char resultado[256];
+        strcpy(resultado, partes);
+
+        pobj->nombre = resultado;
+
+        partes = strtok(NULL, " ");
+        pobj->cedula = atoi(partes);
+    }
+}
