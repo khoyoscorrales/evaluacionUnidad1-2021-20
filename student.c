@@ -188,3 +188,8 @@ void feature6(FILE *fin, struct Obj_t *pobj) {
         pobj->cedula = atoi(partes);
     }
 }
+
+void feature7(FILE *fout, struct Obj_t *pobj) {
+    fprintf(fout, "%s,", pobj->nombre);
+    fprintf(fout, "%d\n", pobj->cedula);
+}
