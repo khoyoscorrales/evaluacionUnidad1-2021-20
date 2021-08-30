@@ -228,3 +228,37 @@ void feature8(FILE *fin, struct _courseInfo_t **pobj, int *length) {
         printf("OK.....");
     }
 }
+
+void feature9(FILE *fout, struct _courseInfo_t *pobj, int length) {
+    char respuesta;
+
+    do {
+        printf("deseas almacenar la información (s) o (n): ");
+        respuesta = getchar();
+
+
+    } while (respuesta != 's' && respuesta != 'n');
+
+    if (respuesta == 's') {
+        for (int i = 0; i < length; ++i) {
+            printf("%d\n", pobj[i].credits);
+            fprintf(fout, "%s,", pobj[i].name);
+            fprintf(fout, "%d,", pobj[i].credits);
+            fprintf(fout, "%.2f\n", pobj[i].grade);
+        }
+    }
+
+    fprintf(fout, "%.0f\n", calcularPromedioPonderado(pobj, length));
+}
+
+double calcularPromedioPonderado(struct _courseInfo_t *pobj, int length) {
+    double suma = 0;
+    double creditos = 0;
+
+    for (int i = 0; i < length; ++i) {
+        suma += (pobj[i].grade * pobj[i].credits);
+        creditos += pobj[i].credits;
+    }
+
+    return suma / creditos;
+}
