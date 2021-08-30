@@ -41,3 +41,32 @@ void invertir(char *cadena) {
         cadena[i++] = temporal;
     }
 }
+
+void feature3(FILE *fin, FILE *fout) {
+    char line[256];
+    int suma;
+
+    if (fgets(line, sizeof(line), fin) != NULL) {
+        suma = sumarContenidoArreglo(line);
+
+        fprintf(fout, "%d\n", suma);
+    }
+}
+
+int sumarContenidoArreglo(char *cadenaArreglo) {
+    int suma = 0;
+    size_t tamagno = strlen(cadenaArreglo);
+    size_t i = 0;
+
+    while (i < tamagno) {
+        char temporal = cadenaArreglo[i];
+
+        if (temporal != ' ' && temporal != '\n') {
+            suma += (temporal - '0');
+        }
+
+        ++i;
+    }
+
+    return suma;
+}

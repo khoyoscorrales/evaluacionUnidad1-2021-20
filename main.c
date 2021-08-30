@@ -21,6 +21,7 @@ int main(int argc, char *argv[]){
 
         const int FEATURE_1 = 1;
         const int FEATURE_2 = 2;
+        const int FEATURE_3 = 3;
 
         int arregloEnteros[100];
         int *enteros;
@@ -48,6 +49,10 @@ int main(int argc, char *argv[]){
                  case FEATURE_2:
                     feature2(archivoFuente, archivoDestino);
                     break;
+                case FEATURE_3:
+                    feature3(archivoFuente, archivoDestino);
+                    break;
+
                
             }
         }
