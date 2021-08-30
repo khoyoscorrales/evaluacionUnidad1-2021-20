@@ -193,3 +193,38 @@ void feature7(FILE *fout, struct Obj_t *pobj) {
     fprintf(fout, "%s,", pobj->nombre);
     fprintf(fout, "%d\n", pobj->cedula);
 }
+
+void feature8(FILE *fin, struct _courseInfo_t **pobj, int *length) {
+    char line[256];
+
+    if (fgets(line, sizeof(line), fin) != NULL) {
+        *length = atoi(line);
+        int n = *length;
+        char entrada[256];
+
+        for (int i = 0; i < n; ++i) {
+            struct _courseInfo_t curso;
+            struct _courseInfo_t *cursoPointer;
+            cursoPointer = &curso;
+
+            printf("ingresa el curso %d: ", (i + 1));
+            scanf("%s", entrada);
+
+            char *partes;
+            partes = strtok(entrada, ",");
+
+            strcpy(cursoPointer->name, partes);
+            printf("F9in %s\n", cursoPointer->name);
+            partes = strtok(NULL, ",");
+            cursoPointer->credits = atoi(partes);
+            printf("F9in %d\n", cursoPointer->credits);
+            partes = strtok(NULL, ",");
+            cursoPointer->grade = atoi(partes);
+            printf("F9in %.2f\n", cursoPointer->grade);
+            printf("\n");
+
+            pobj[i] = cursoPointer;
+        }
+        printf("OK.....");
+    }
+}
