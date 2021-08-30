@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
         }
 
         const int FEATURE_1 = 1;
-       
+        const int FEATURE_2 = 2;
 
         int arregloEnteros[100];
         int *enteros;
@@ -42,8 +42,11 @@ int main(int argc, char *argv[]){
 
         for (int i = 1; i <= 9; i++) {
             switch (i) {
-                case 1:
+                case FEATURE_1:
                     feature1(archivoFuente, archivoDestino);
+                    break;
+                 case FEATURE_2:
+                    feature2(archivoFuente, archivoDestino);
                     break;
                
             }

@@ -23,4 +23,21 @@ void feature1(FILE *fin, FILE *fout) {
         fprintf(fout, "%s", strtok(line, "\n"));
     }
 }
+void feature2(FILE *fin, FILE *fout) {
+    char line[256];
 
+    if (fgets(line, sizeof(line), fin) != NULL) {
+        invertir(line);
+        fprintf(fout, "%s\n", line);
+    }
+}
+
+void invertir(char *cadena) {
+    size_t tamagno = strlen(cadena);
+    size_t i = 0;
+    while (tamagno + 1 > i) {
+        char temporal = cadena[--tamagno];
+        cadena[tamagno] = cadena[i];
+        cadena[i++] = temporal;
+    }
+}
